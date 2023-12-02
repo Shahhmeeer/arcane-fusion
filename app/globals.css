@@ -2,26 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Arcane";
+  src: url("../public/Arcane-Regular.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 1rem; */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  background-color: black;
+  background-image: url("../public/bg_f.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+.glitch-background {
+  background-image: url("../public/bg_f.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem;
+}
+
+.verticalLine {
+  margin-inline: 1rem;
+  width: 0.15rem;
+  background-color: #ccc;
+  height: 5rem;
+}
+
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.glitch-text {
+  text-shadow: #9b0000 0 0, #00ffff56 0 0;
+  transition: text-shadow 100ms linear;
+}
+
+.glitch-text:hover {
+  text-shadow: #9b0000 -4px 0, #00ffff56 0 0;
+}
+
+.active {
+  animation: glitch 800ms infinite linear;
+  /* padding-bottom: 0.45rem; */
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  background-color: #9b0000;
+  width: 80%;
+  height: 3px;
+  display: block;
+  border: 0.25rem;
+}
+.active::before {
+  content: "";
+  background-color: #9b0000;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+input,
+select,
+textarea {
+  padding: 0.55rem;
+  width: 500px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+label {
+  width: 500px;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: red 0 0, cyan 0 0;
+  }
+  25% {
+    text-shadow: red -4px 0, cyan 0 0;
+  }
+  50% {
+    text-shadow: red 0 0, cyan 0 0;
+  }
+  75% {
+    text-shadow: red 2px 0, cyan 0 0;
+  }
+  100% {
+    text-shadow: red 0 0, cyan 0 0;
+  }
+}
+
+.clipped {
+  width: 400px;
+  height: 400px;
+  background: turquoise url("../public/bg-image.jpg");
+  background-size: cover;
+  -webkit-clip-path: url(#my-clip-path);
+  clip-path: url(#my-clip-path);
+}
+.clipped2 {
+  width: 400px;
+  height: 400px;
+  background: turquoise url("../public/contact-image.jpg");
+  background-size: cover;
+  -webkit-clip-path: url(#my-clip-path2);
+  clip-path: url(#my-clip-path2);
+}
+
+.pseudo-partial-border {
+  position: relative;
+  /* width: 250px; */
+  /* height: 41px; */
+  padding: 14px;
+  /* margin: 25px; */
+  /* background-image: linear-gradient(90deg, #5b5bff, #951695); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-align: center; 
+}
+
+.pseudo-partial-border::before,
+.pseudo-partial-border::after {
+  position: absolute;
+  width: 33px;
+  height: 20px;
+  content: "";
+}
+
+.pseudo-partial-border::before {
+  left: 0;
+  top: 0;
+  border-left: 5px solid #ff00ff;
+  border-top: 5px solid #ff00ff;
+  border-radius: 0.25rem;
+}
+
+.pseudo-partial-border::after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #ff00ff;
+  border-bottom: 3px solid #ff00ff;
+  border-radius: 0.25rem;
+}
+
+@layer components {
+  .btn {
+    @apply bg-blue-600 text-indigo-200 rounded-md font-medium px-4 py-2 hover:bg-red-400 hover:text-black;
+  }
 }
