@@ -29,28 +29,22 @@ export default function Navbar() {
     };
   }, []);
 
-  // const headerStyle = {
-  //   backgroundColor: navbarColor,
-  //   height: "7vh",
-  //   transition: "background-color 0.3s ease",
-  // };
-
   const linksStyle = {
     color: navlinksColor,
   };
 
-  const navlinks = ["Home", "About Us", "Our Team", "Careers", "Contact Us"];
-  const links = ["/", "about", "team", "careers", "contact"];
+  const navlinks = ["Home", "About Us", "Contact Us"];
+  const links = ["/", "about", "contact"];
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <header className="flex items-center justify-between font-arcane sticky top-0 backdrop-blur-md z-10">
+    <header className="flex items-center justify-between font-arcane fixed backdrop-blur-md top-0 z-10 w-full" style={{ backgroundColor: "rgba(0,0,0,0.15)", minHeight: "8dvh" }}>
       <div className="flex items-center justify-between mx-auto" style={{ width: "1440px" }}>
-        <div className={logoVisible ? "" : "invisible"}>
+        <div>
           <Logo />
         </div>
         <nav className="flex">
-          <ul className="flex items-center justify-evenly space-x-10" style={linksStyle}>
+          <ul className="flex items-center justify-evenly space-x-8" style={linksStyle}>
             {navlinks.map((navlink, index) => {
               return (
                 <li key={index}>

@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Arcane Fusion | Gaming Redefined, Imagination Unleashed",
@@ -16,10 +16,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/arcane-fusion-logo.svg" />
       </head>
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <Navbar />
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   );
