@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #010102;
 }
 
@@ -24,7 +24,7 @@ video {
 }
 
 .verticalLine {
-  margin-inline: 1rem;
+  margin-inline: 0.5rem;
   width: 0.15rem;
   background-color: #ccc;
   height: 5rem;
@@ -75,13 +75,13 @@ input,
 select,
 textarea {
   padding: 0.55rem;
-  width: 500px;
   border-radius: 0.25rem;
   cursor: pointer;
+  width: 100%;
 }
 
 label {
-  width: 500px;
+  width: 100%;
 }
 
 @keyframes glitch {
@@ -102,7 +102,7 @@ label {
   }
 }
 
-.clipped {
+/* .clipped {
   width: 400px;
   height: 400px;
   background: turquoise url("../public/bg-image.jpg");
@@ -117,7 +117,7 @@ label {
   background-size: cover;
   -webkit-clip-path: url(#my-clip-path2);
   clip-path: url(#my-clip-path2);
-}
+} */
 
 @layer base {
   :root {

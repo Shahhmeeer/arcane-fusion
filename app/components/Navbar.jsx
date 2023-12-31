@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { useState, useEffect } from "react";
+import CustomSheet from "./Custom Sheet";
 
 export default function Navbar() {
   // const [navbarColor, setNavbarColor] = useState("transparent");
@@ -39,11 +40,11 @@ export default function Navbar() {
 
   return (
     <header className="flex items-center justify-between font-arcane fixed backdrop-blur-md top-0 z-10 w-full" style={{ backgroundColor: "rgba(0,0,0,0.15)", minHeight: "8dvh" }}>
-      <div className="flex items-center justify-between mx-auto" style={{ width: "1440px" }}>
+      <div className="flex items-center justify-between sm:mx-auto mx-6" style={{ width: "1440px" }}>
         <div>
           <Logo />
         </div>
-        <nav className="flex">
+        <nav className="hidden sm:flex">
           <ul className="flex items-center justify-evenly space-x-8" style={linksStyle}>
             {navlinks.map((navlink, index) => {
               return (
@@ -61,6 +62,9 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
+        <div className="sm:hidden">
+          <CustomSheet />
+        </div>
       </div>
     </header>
   );

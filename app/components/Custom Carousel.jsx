@@ -33,10 +33,10 @@ export default function CustomCarousel() {
         }),
       ]}
     >
-      <CarouselContent className="relative h-full w-full">
+      <CarouselContent className="relative h-full w-full -ml-4">
         {technologies.map((technology, index) => (
-          <CarouselItem key={index} className="basis-1/6 pr-8">
-            <Image src={technology} alt="Technologies" width={100} height={100}></Image>
+          <CarouselItem key={index} className="sm:basis-1/5 md:basis-1/6 basis-1/3">
+            <Image src={technology} alt="Technologies" width={80} height={80}></Image>
           </CarouselItem>
         ))}
       </CarouselContent>
