@@ -2,7 +2,23 @@
 
 import CustomCarousel from "@/app/components/Custom Carousel";
 
+const calculateWidth = () => {
+  const isWindowDefined = typeof window !== "undefined";
+  if (isWindowDefined) {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 300 && windowWidth <= 440) {
+      return "350px";
+    } else if (windowWidth > 440 && windowWidth <= 1290) {
+      return "750px";
+    } else {
+      return "1000px";
+    }
+  }
+};
+
 export default function About() {
+  const width = calculateWidth();
   return (
     <main className="text-gray-200 mt-24 sm:mt-0">
       <section className="flex" style={{ minHeight: "60dvh", backgroundImage: `url('/arcane-fusion-logo.svg')`, backgroundRepeat: "no-repeat", backgroundPositionX: "left" }}>
@@ -26,10 +42,7 @@ export default function About() {
             fusion of power, much like combining two epic spells to create an unstoppable force. Our developers seamlessly navigate the realms of Unreal and Unity, harnessing the
             strengths of each to conjure gaming experiences that leave players spellbound.
           </p>
-          <div
-            className="mt-12 mx-auto"
-            style={{ width: window.innerWidth >= 300 && window.innerWidth <= 440 ? "350px" : window.innerWidth > 440 && window.innerWidth <= 1290 ? "750px" : "1000px" }}
-          >
+          <div className="mt-12 mx-auto" style={{ width: width }}>
             <CustomCarousel />
           </div>
         </div>
