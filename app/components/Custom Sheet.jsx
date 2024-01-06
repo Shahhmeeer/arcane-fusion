@@ -13,21 +13,19 @@ export default function CustomSheet() {
       <SheetContent style={{ backgroundColor: "#010102", color: "white" }}>
         <SheetHeader>
           <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-          <SheetDescription>
-            <nav className="">
-              <ul className="flex flex-col items-center justify-evenly space-y-8">
-                {navlinks.map((navlink, index) => {
-                  return (
-                    <li key={index}>
-                      <Link href={links[index]} key={index}>
-                        {navlink}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </SheetDescription>
+          <nav>
+            <ul className="flex flex-col items-center justify-evenly space-y-8">
+              {navlinks.map((navlink, index) => {
+                return (
+                  <li key={index}>
+                    <Link href={links[index]} key={index}>
+                      {navlink}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </SheetHeader>
       </SheetContent>
     </Sheet>

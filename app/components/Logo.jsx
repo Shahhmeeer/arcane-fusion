@@ -13,7 +13,7 @@ export default function Logo() {
     <div className="flex items-center justify-center">
       <Image src={companyLogo} width={30} alt="Arcane Fusion Logo" ref={glitch} />
       <div className="verticalLine bg-gray-200" ref={glitch} style={{ height: "3rem" }}></div>
-      <Link href="/" className="flex font-arcane pt-4 text-xl text-gray-200" ref={glitch}>
+      <Link href="/" className="flex font-arcane pt-2 text-xl text-gray-200" ref={glitch}>
         arcane fusion
       </Link>
     </div>

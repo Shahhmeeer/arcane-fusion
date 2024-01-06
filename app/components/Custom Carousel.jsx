@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 export default function CustomCarousel() {
   const technologies = [
@@ -22,7 +22,7 @@ export default function CustomCarousel() {
   ];
   return (
     <Carousel
-      className="h-full"
+      className="h-full -ml-4"
       opts={{
         align: "start",
         loop: true,
@@ -33,10 +33,10 @@ export default function CustomCarousel() {
         }),
       ]}
     >
-      <CarouselContent className="relative h-full w-full -ml-4">
+      <CarouselContent className="relative h-full w-full">
         {technologies.map((technology, index) => (
           <CarouselItem key={index} className="sm:basis-1/5 md:basis-1/6 basis-1/3">
-            <Image src={technology} alt="Technologies" width={80} height={80}></Image>
+            <Image src={technology} alt="Technologies" width={150} height={150}></Image>
           </CarouselItem>
         ))}
       </CarouselContent>
